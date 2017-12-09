@@ -1,0 +1,4 @@
+Working on venue CRUD. Last stop was editing the create form.
+Added custom styles to override the placeholder text. Currently green need to redo to lighter gray.
+Create form more or less complete. Not tested.
+
