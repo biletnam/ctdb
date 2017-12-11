@@ -12,6 +12,14 @@ Route::group([
         'middleware' => 'role:administrator',
     ], function () {
         /*
+         * Company Management
+         */
+        Route::group(['namespace' => 'Company'], function () {
+            Route::resource('company', 'CompanyController', ['except' => ['show']]);
+        });
+
+
+        /*
          * Venue Management
          */
         Route::group(['namespace' => 'Venue'], function () {

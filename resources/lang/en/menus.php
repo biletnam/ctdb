@@ -17,6 +17,13 @@ return [
         'ctdb' => [
             'title' => 'CTDB Management',
 
+            'companies' => [
+                'main'    => 'Companies',
+                'all'     => 'All Companies',
+                'create'  => 'Create Company',
+                'edit'    => 'Edit Company',
+                'deleted' => 'Deleted Companies',
+            ],
             'venues' => [
                 'main'    => 'Venues',
                 'all'     => 'All Venues',

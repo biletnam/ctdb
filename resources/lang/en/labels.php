@@ -34,6 +34,38 @@ return [
 
     'backend' => [
         'ctdb' => [
+            'companies' => [
+                'create'     => 'Create Company',
+                'edit'       => 'Edit Company',
+                'management' => 'Company Management',
+
+                'table' => [
+                    'name'            => 'Name',
+                    'address1'        => 'Address',
+                    'city'            => 'City',
+                    'zip'             => 'Zip Code',
+                    'total'           => 'company total|companies total',
+                ],
+                'fields' => [
+                    'name'            => 'Name',
+                    'address1'        => 'Address',
+                    'address2'        => '<p class="font-weight-light">(optional)</p>',
+                    'city'            => 'City',
+                    'state'           => 'State',
+                    'zip'             => 'Zip Code',
+                    'contact'         => 'Contact <span class="font-weight-light">(optional)</span>',
+                    'phone'           => 'Phone <span class="font-weight-light">(optional)</span>',
+                    'email'           => 'Email <span class="font-weight-light">(optional)</span>',
+                    'description'     => 'Description <span class="font-weight-light">(optional)</span>',
+                    'weblink'         => 'Web Site <span class="font-weight-light">(optional)</span>',
+                    'facebooklink'    => 'Facebook <span class="font-weight-light">(optional)</span>',
+                    'twitterlink'     => 'Twitter <span class="font-weight-light">(optional)</span>',
+                    'youtubelink'     => 'YouTube <span class="font-weight-light">(optional)</span>',
+                    'instagramlink'   => 'Instagram <span class="font-weight-light">(optional)</span>',
+                    'primaryvenue'    => 'Primary Venue <span class="font-weight-light">(optional)</span>',
+                    'type'            => 'Company Type',
+                ],
+            ],
             'venues' => [
                 'create'     => 'Create Venue',
                 'edit'       => 'Edit Venue',

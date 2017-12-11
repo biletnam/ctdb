@@ -14,6 +14,11 @@ return [
     */
 
     'backend' => [
+        'companies' => [
+            'created' => 'The company was successfully created.',
+            'deleted' => 'The company was successfully deleted.',
+            'updated' => 'The company was successfully updated.',
+        ],
         'types' => [
             'created' => 'The company type was successfully created.',
             'deleted' => 'The company type was successfully deleted.',

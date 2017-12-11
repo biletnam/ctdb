@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVenuesTable extends Migration
+class CreateCompaniesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateVenuesTable extends Migration
      */
     public function up()
     {
-        Schema::create('venues', function (Blueprint $table) {
+        Schema::create('companies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('address1');
@@ -26,15 +26,20 @@ class CreateVenuesTable extends Migration
             $table->string('email')->nullable();
             $table->text('description')->nullable();
             $table->text('weblink')->nullable();
+            $table->text('ticketlink')->nullable();
             $table->text('facebooklink')->nullable();
             $table->text('twitterlink')->nullable();
             $table->text('youtubelink')->nullable();
             $table->text('instagramlink')->nullable();
             $table->boolean('active')->default(true);
+            $table->integer('type_id')->unsigned();
+            $table->foreign('type_id')->references('id')->on('types');
+            $table->integer('venue_id')->unsigned();
+            $table->foreign('venue_id')->references('id')->on('venues')->nullable();
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
-            $table->softdeletes();
+            $table->softDeletes();
         });
     }
 
@@ -45,6 +50,6 @@ class CreateVenuesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('venues');
+        Schema::dropIfExists('companies');
     }
 }

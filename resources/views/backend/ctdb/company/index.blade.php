@@ -1,6 +1,6 @@
 @extends ('backend.layouts.app')
 
-@section ('title', __('labels.backend.ctdb.venues.management'))
+@section ('title', __('labels.backend.ctdb.companies.management'))
 
 @section('content')
 <div class="card">
@@ -8,12 +8,12 @@
         <div class="row">
             <div class="col-sm-5">
                 <h4 class="card-title mb-0">
-                    {{ __('labels.backend.ctdb.venues.management') }}
+                    {{ __('labels.backend.ctdb.companies.management') }}
                 </h4>
             </div><!--col-->
 
             <div class="col-sm-7">
-                @include('backend.ctdb.venue.includes.header-buttons')
+                @include('backend.ctdb.company.includes.header-buttons')
             </div><!--col-->
         </div><!--row-->
 
@@ -23,21 +23,21 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th>@sortablelink('name', __('labels.backend.ctdb.venues.table.name'))</th>
-                            <th>{{ __('labels.backend.ctdb.venues.table.address1') }}</th>
-                            <th>@sortablelink('city', __('labels.backend.ctdb.venues.table.city'))</th>
-                            <th>@sortablelink('zip', __('labels.backend.ctdb.venues.table.zip'))</th>
+                            <th>@sortablelink('name', __('labels.backend.ctdb.companies.table.name'))</th>
+                            <th>{{ __('labels.backend.ctdb.companies.table.address1') }}</th>
+                            <th>@sortablelink('city', __('labels.backend.ctdb.companies.table.city'))</th>
+                            <th>@sortablelink('zip', __('labels.backend.ctdb.companies.table.zip'))</th>
                             <th>{{ __('labels.general.actions') }}</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach ($venues as $venue)
+                        @foreach ($companies as $company)
                             <tr>
-                                <td>{{ $venue->name }}</td>
-                                <td>{{ $venue->address1 }}</td>
-                                <td>{{ $venue->city }}</td>
-                                <td>{{ $venue->zip }}</td>
-                                <td>{!! $venue->action_buttons !!}</td>
+                                <td>{{ $company->name }}</td>
+                                <td>{{ $company->address1 }}</td>
+                                <td>{{ $company->city }}</td>
+                                <td>{{ $company->zip }}</td>
+                                <td>{!! $company->action_buttons !!}</td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -48,13 +48,13 @@
         <div class="row">
             <div class="col-7">
                 <div class="float-left">
-                    {!! $venues->total() !!} {{ trans_choice('labels.backend.ctdb.venues.table.total', $venues->total()) }}
+                    {!! $companies->total() !!} {{ trans_choice('labels.backend.ctdb.companies.table.total', $companies->total()) }}
                 </div>
             </div><!--col-->
 
             <div class="col-5">
                 <div class="float-right">
-                    {!! $venues->render() !!}
+                    {!! $companies->render() !!}
                 </div>
             </div><!--col-->
         </div><!--row-->

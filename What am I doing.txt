@@ -1,4 +1,6 @@
-Working on venue CRUD. Last stop was editing the create form.
-Added custom styles to override the placeholder text. Currently green need to redo to lighter gray.
-Create form more or less complete. Not tested.
+Working on creat CRUD form for Company.
+Design change to group required and optional fields - testing on Company form
+Need to retrofit to Venue form once decided.
+
+
 
