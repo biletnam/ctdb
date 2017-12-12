@@ -2,5 +2,8 @@ Working on creat CRUD form for Company.
 Design change to group required and optional fields - testing on Company form
 Need to retrofit to Venue form once decided.
 
+Interrupted myself to go back and not use the html() library for my own forms etc.
+Did type, licensor and genre. Need to do venue and then back to company.
+
 
 
