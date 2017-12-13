@@ -1,6 +1,6 @@
 @extends ('backend.layouts.app')
 
-@section ('title', __('labels.backend.ctdb.licensors.management'))
+@section ('title', __('ctdb.backend.licensor.headings.management'))
 
 @section('content')
 <div class="card">
@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-sm-5">
                 <h4 class="card-title mb-0">
-                    {{ __('labels.backend.ctdb.licensors.management') }}
+                    {{ __('ctdb.backend.licensor.headings.management') }}
                 </h4>
             </div><!--col-->
 
@@ -23,8 +23,8 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th>@sortablelink('name', __('labels.backend.ctdb.licensors.table.name'))</th>
-                            <th>{{ __('labels.backend.ctdb.licensors.table.weblink') }}</th>
+                            <th>@sortablelink('name', __('ctdb.backend.licensor.table.columns.name'))</th>
+                            <th>{{ __('ctdb.backend.licensor.table.columns.weblink') }}</th>
                             <th>{{ __('labels.general.actions') }}</th>
                         </tr>
                         </thead>
@@ -44,7 +44,7 @@
         <div class="row">
             <div class="col-7">
                 <div class="float-left">
-                    {!! $licensors->total() !!} {{ trans_choice('labels.backend.ctdb.licensors.table.total', $licensors->total()) }}
+                    {!! $licensors->total() !!} {{ trans_choice('ctdb.backend.licensor.table.total', $licensors->total()) }}
                 </div>
             </div><!--col-->
 

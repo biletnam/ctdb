@@ -1,6 +1,6 @@
 @extends ('backend.layouts.app')
 
-@section ('title', __('labels.backend.ctdb.types.management'))
+@section ('title', __('ctdb.backend.type.headings.management'))
 
 @section('content')
 
@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-sm-5">
                     <h4 class="card-title mb-0">
-                        {{ __('labels.backend.ctdb.types.management') }}
+                        {{ __('ctdb.backend.type.headings.management') }}
                     </h4>
                 </div><!--col-->
 
@@ -24,7 +24,7 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>@sortablelink('name', __('labels.backend.ctdb.types.table.name'))</th>
+                                <th>@sortablelink('name', __('ctdb.backend.type.table.columns.name'))</th>
                                 <th>{{ __('labels.general.actions') }}</th>
                             </tr>
                             </thead>
@@ -43,7 +43,7 @@
             <div class="row">
                 <div class="col-7">
                     <div class="float-left">
-                        {!! $types->total() !!} {{ trans_choice('labels.backend.ctdb.types.table.total', $types->total()) }}
+                        {!! $types->total() !!} {{ trans_choice('ctdb.backend.type.table.total', $types->total()) }}
                     </div>
                 </div><!--col-->
 

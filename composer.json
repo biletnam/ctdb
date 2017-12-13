@@ -9,6 +9,7 @@
         "appstract/laravel-blade-directives": "^0.4.4",
         "arcanedev/log-viewer": "^4.4",
         "arcanedev/no-captcha": "^5.0",
+        "barryvdh/laravel-ide-helper": "^2.4",
         "creativeorange/gravatar": "~1.0",
         "davejamesmiller/laravel-breadcrumbs": "^4.1",
         "doctrine/dbal": "^2.6",
@@ -64,6 +65,12 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover"
+        ],
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "php artisan ide-helper:generate",
+            "php artisan ide-helper:meta",
+            "php artisan optimize"
         ],
         "clear-all": [
             "composer dumpautoload -o",

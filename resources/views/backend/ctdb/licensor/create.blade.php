@@ -1,6 +1,6 @@
 @extends ('backend.layouts.app')
 
-@section ('title', __('labels.backend.ctdb.licensors.management') . ' | ' . __('labels.backend.ctdb.licensors.create'))
+@section ('title', __('ctdb.backend.licensor.headings.management') . ' | ' . __('ctdb.backend.licensor.headings.create'))
 
 @section('content')
 
@@ -13,8 +13,8 @@
                 <div class="row">
                     <div class="col-sm-5">
                         <h4 class="card-title mb-0">
-                            {{ __('labels.backend.ctdb.licensors.management') }}
-                            <small class="text-muted">{{ __('labels.backend.ctdb.licensors.create') }}</small>
+                            {{ __('ctdb.backend.licensor.headings.management') }}
+                            <small class="text-muted">{{ __('ctdb.backend.licensor.headings.create') }}</small>
                         </h4>
                     </div><!--col-->
                 </div><!--row-->
@@ -24,27 +24,27 @@
                 <div class="row mt-4 mb-4">
                     <div class="col">
                         <div class="form-group row">
-                            <label class="col-md-2 form-control-label" for="name">{{ __('validation.attributes.backend.ctdb.licensors.name') }}</label>
+                            <label class="col-md-2 form-control-label" for="name">{{ __('ctdb.backend.licensor.fields.labels.name') }}</label>
                             <div class="col-md-10">
                                 <input class="form-control"
                                        type="text"
                                        name="name"
                                        id="name"
                                        value="{{ old('name') }}"
-                                       placeholder="{{ __('validation.attributes.backend.ctdb.licensors.name') }}"
+                                       placeholder="{{ __('ctdb.backend.licensor.fields.placeholders.name') }}"
                                        maxlength="191"
                                        required autofocus>
                             </div><!--col-->
                         </div><!--form-group-->
                         <div class="form-group row">
-                            <label class="col-md-2 form-control-label" for="weblink">{{ __('validation.attributes.backend.ctdb.licensors.weblink1') }}</label>
+                            <label class="col-md-2 form-control-label" for="weblink">{{ __('ctdb.backend.licensor.fields.labels.weblink') }}</label>
                             <div class="col-md-10">
                                 <input class="form-control"
                                        type="url"
                                        name="weblink"
                                        id="weblink"
                                        value="{{ old('weblink') }}"
-                                       placeholder="{{ __('validation.attributes.backend.ctdb.licensors.weblink2') }}"
+                                       placeholder="{{ __('ctdb.backend.licensor.fields.placeholders.weblink') }}"
                                        maxlength="191">
                             </div><!--col-->
                         </div><!--form-group-->

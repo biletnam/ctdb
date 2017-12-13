@@ -1,6 +1,6 @@
 @extends ('backend.layouts.app')
 
-@section ('title', __('labels.backend.ctdb.genres.management') . ' | ' . __('labels.backend.ctdb.genres.edit'))
+@section ('title', __('ctdb.backend.genre.headings.management') . ' | ' . __('ctdb.backend.genre.headings.create'))
 
 @section('content')
 
@@ -14,8 +14,8 @@
                 <div class="row">
                     <div class="col-sm-5">
                         <h4 class="card-title mb-0">
-                            {{ __('labels.backend.ctdb.genres.management') }}
-                            <small class="text-muted">{{ __('labels.backend.ctdb.genres.edit') }}</small>
+                            {{ __('ctdb.backend.genre.headings.management') }}
+                            <small class="text-muted">{{ __('ctdb.backend.genre.headings.edit') }}</small>
                         </h4>
                     </div><!--col-->
                 </div><!--row-->
@@ -26,7 +26,7 @@
                 <div class="row mt-4">
                     <div class="col">
                         <div class="form-group row">
-                            <label class="col-md-2 form-control-label" for="name">{{ __('validation.attributes.backend.ctdb.genres.name') }}</label>
+                            <label class="col-md-2 form-control-label" for="name">{{ __('ctdb.backend.genre.fields.labels.name') }}</label>
 
                             <div class="col-md-10">
                                 <input class="form-control"
@@ -34,7 +34,7 @@
                                        name="name"
                                        id="name"
                                        value="{{ old('name',$genre->name) }}"
-                                       placeholder="{{ __('validation.attributes.backend.ctdb.genres.name') }}"
+                                       placeholder="{{ __('ctdb.backend.genre.fields.placeholders.name') }}"
                                        maxlength="191"
                                        required autofocus>
                             </div><!--col-->

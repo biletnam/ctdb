@@ -1,17 +1,20 @@
 @extends ('backend.layouts.app')
 
-@section ('title', __('labels.backend.ctdb.venues.management') . ' | ' . __('labels.backend.ctdb.venues.create'))
+@section ('title', __('ctdb.backend.venue.headings.management') . ' | ' . __('ctdb.backend.venue.headings.create'))
 
 @section('content')
-    {{ html()->form('POST', route('admin.ctdb.venue.store'))->class('form-horizontal')->open() }}
-    {{ html()->hidden("user_id",$logged_in_user->id)}}
+
+    <form class="form-horizontal" method="POST" action="{{ route('admin.ctdb.venue.store') }}">
+        {{ csrf_field() }}
+        <input type="hidden" name="user_id" id="user_id" value="{{ $logged_in_user->id }}">
+
         <div class="card">
             <div class="card-body">
                 <div class="row">
                     <div class="col-sm-5">
                         <h4 class="card-title mb-0">
-                            {{ __('labels.backend.ctdb.venues.management') }}
-                            <small class="text-muted">{{ __('labels.backend.ctdb.venues.create') }}</small>
+                            {{ __('ctdb.backend.venue.headings.management') }}
+                            <small class="text-muted">{{ __('ctdb.backend.venue.headings.create') }}</small>
                         </h4>
                     </div><!--col-->
                 </div><!--row-->
@@ -21,14 +24,16 @@
                 <div class="row mt-2 mb-2">
                     <div class="col">
                         <div class="form-group row">
-                            {{ html()->label(__('labels.backend.ctdb.venues.fields.name'))->class('col-md-2 form-control-label')->for('name') }}
+                            <label class="col-md-2 form-control-label" for="name">{{ __('ctdb.backend.venue.fields.labels.name') }}</label>
                             <div class="col-md-10">
-                                {{ html()->text('name')
-                                    ->class('form-control')
-                                    ->placeholder(__('validation.attributes.backend.ctdb.venues.name'))
-                                    ->attribute('maxlength', 191)
-                                    ->required()
-                                    ->autofocus() }}
+                                <input class="form-control"
+                                       type="text"
+                                       name="name"
+                                       id="name"
+                                       value="{{ old('name') }}"
+                                       placeholder="{{ __('ctdb.backend.venue.fields.placeholders.name') }}"
+                                       maxlength="191"
+                                       required autofocus>
                             </div><!--col-->
                         </div><!--form-group-->
                     </div><!--col-->

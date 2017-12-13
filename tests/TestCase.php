@@ -21,7 +21,7 @@ abstract class TestCase extends Illuminate\Foundation\Testing\TestCase
      *
      * @var string
      */
-    protected $baseUrl = 'https://ctdb.dev';
+    protected $baseUrl = 'https://ctdb.test';
 
     /**
      * @var

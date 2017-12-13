@@ -1,6 +1,6 @@
 @extends ('backend.layouts.app')
 
-@section ('title', __('labels.backend.ctdb.types.management') . ' | ' . __('labels.backend.ctdb.types.create'))
+@section ('title', __('ctdb.backend.type.headings.management') . ' | ' . __('ctdb.backend.type.headings.create'))
 
 @section('content')
 
@@ -13,8 +13,8 @@
                 <div class="row">
                     <div class="col-sm-5">
                         <h4 class="card-title mb-0">
-                            {{ __('labels.backend.ctdb.types.management') }}
-                            <small class="text-muted">{{ __('labels.backend.ctdb.types.create') }}</small>
+                            {{ __('ctdb.backend.type.headings.management') }}
+                            <small class="text-muted">{{ __('ctdb.backend.type.headings.create') }}</small>
                         </h4>
                     </div><!--col-->
                 </div><!--row-->
@@ -24,14 +24,14 @@
                 <div class="row mt-4 mb-4">
                     <div class="col">
                         <div class="form-group row">
-                            <label class="col-md-2 form-control-label" for="name">{{ __('validation.attributes.backend.ctdb.types.name') }}</label>
+                            <label class="col-md-2 form-control-label" for="name">{{ __('ctdb.backend.type.fields.labels.name') }}</label>
                             <div class="col-md-10">
                                 <input class="form-control"
                                        type="text"
                                        name="name"
                                        id="name"
                                        value="{{ old('name') }}"
-                                       placeholder="{{ __('validation.attributes.backend.ctdb.types.name') }}"
+                                       placeholder="{{ __('ctdb.backend.type.fields.placeholders.name') }}"
                                        maxlength="191"
                                        required autofocus>
                             </div><!--col-->
