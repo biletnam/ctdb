@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend\Ctdb\Venue;
 
+use CountryState;
 use App\Models\Ctdb\Venue;
 use App\Http\Controllers\Controller;
 use App\Events\Backend\Ctdb\Venue\VenueDeleted;
@@ -48,7 +49,8 @@ class VenueController extends Controller
      */
     public function create(ManageVenueRequest $request)
     {
-        return view('backend.ctdb.venue.create');
+        $states = CountryState::getStates('US');
+        return view('backend.ctdb.venue.create', compact('states'));
     }
 
     /**

@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2017-12-13.
+    * Generated on 2017-12-15.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -52,6 +52,7 @@ namespace PHPSTORM_META {
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'agent' => \Jenssegers\Agent\Agent::class,
+        'CountryState' => \DougSisk\CountryState\CountryState::class,
         'gravatar' => \Creativeorange\Gravatar\Gravatar::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
@@ -200,6 +201,7 @@ namespace PHPSTORM_META {
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'agent' => \Jenssegers\Agent\Agent::class,
+        'CountryState' => \DougSisk\CountryState\CountryState::class,
         'gravatar' => \Creativeorange\Gravatar\Gravatar::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
@@ -348,6 +350,7 @@ namespace PHPSTORM_META {
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'agent' => \Jenssegers\Agent\Agent::class,
+        'CountryState' => \DougSisk\CountryState\CountryState::class,
         'gravatar' => \Creativeorange\Gravatar\Gravatar::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
@@ -496,6 +499,7 @@ namespace PHPSTORM_META {
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'agent' => \Jenssegers\Agent\Agent::class,
+        'CountryState' => \DougSisk\CountryState\CountryState::class,
         'gravatar' => \Creativeorange\Gravatar\Gravatar::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
@@ -644,6 +648,7 @@ namespace PHPSTORM_META {
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'agent' => \Jenssegers\Agent\Agent::class,
+        'CountryState' => \DougSisk\CountryState\CountryState::class,
         'gravatar' => \Creativeorange\Gravatar\Gravatar::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
@@ -792,6 +797,7 @@ namespace PHPSTORM_META {
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'agent' => \Jenssegers\Agent\Agent::class,
+        'CountryState' => \DougSisk\CountryState\CountryState::class,
         'gravatar' => \Creativeorange\Gravatar\Gravatar::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
@@ -940,6 +946,7 @@ namespace PHPSTORM_META {
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'agent' => \Jenssegers\Agent\Agent::class,
+        'CountryState' => \DougSisk\CountryState\CountryState::class,
         'gravatar' => \Creativeorange\Gravatar\Gravatar::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,

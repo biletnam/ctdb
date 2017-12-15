@@ -13,6 +13,7 @@
         "creativeorange/gravatar": "~1.0",
         "davejamesmiller/laravel-breadcrumbs": "^4.1",
         "doctrine/dbal": "^2.6",
+        "dougsisk/laravel-country-state": "^2.1",
         "fideloper/proxy": "~3.3",
         "hieu-le/active": "^3.5",
         "jenssegers/agent": "^2.6",

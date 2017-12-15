@@ -33,7 +33,7 @@
                                        value="{{ old('name') }}"
                                        placeholder="{{ __('ctdb.backend.venue.fields.placeholders.name') }}"
                                        maxlength="191"
-                                       required autofocus>
+                                       required autofocus />
                             </div><!--col-->
                         </div><!--form-group-->
                     </div><!--col-->
@@ -42,22 +42,28 @@
                 <div class="row mt-2 mb-2">
                     <div class="col">
                         <div class="form-group row">
-                            {{ html()->label(__('labels.backend.ctdb.venues.fields.address1'))->class('col-md-2 form-control-label')->for('address1') }}
+                            <label class="col-md-2 form-control-label" for="address1">{{ __('ctdb.backend.venue.fields.labels.address1') }}</label>
                             <div class="col-md-10">
-                                {{ html()->text('address1')
-                                    ->class('form-control')
-                                    ->placeholder(__('validation.attributes.backend.ctdb.venues.address1'))
-                                    ->attribute('maxlength', 191)
-                                    ->required() }}
+                                <input class="form-control"
+                                       type="text"
+                                       name="address1"
+                                       id="address1"
+                                       value="{{ old('address1') }}"
+                                       placeholder="{{ __('ctdb.backend.venue.fields.placeholders.address1') }}"
+                                       maxlength="191"
+                                       required />
                             </div><!--col-->
                         </div><!--form-group-->
                         <div class="form-group row">
-                            {{ html()->label(__('labels.backend.ctdb.venues.fields.address2'))->class('col-md-2 form-control-label')->for('address2') }}
+                            <label class="col-md-2 form-control-label" for="address2">{{ __('ctdb.backend.venue.fields.labels.address2') }}</label>
                             <div class="col-md-10">
-                                {{ html()->text('address2')
-                                    ->class('form-control')
-                                    ->placeholder(__('validation.attributes.backend.ctdb.venues.address2'))
-                                    ->attribute('maxlength', 191) }}
+                                <input class="form-control"
+                                       type="text"
+                                       name="address2"
+                                       id="address2"
+                                       value="{{ old('address2') }}"
+                                       placeholder="{{ __('ctdb.backend.venue.fields.placeholders.address2') }}"
+                                       maxlength="191" />
                             </div><!--col-->
                         </div><!--form-group-->
                     </div><!--col-->
@@ -66,13 +72,16 @@
                 <div class="row mt-2 mb-2">
                     <div class="col">
                         <div class="form-group row">
-                            {{ html()->label(__('labels.backend.ctdb.venues.fields.city'))->class('col-md-2 form-control-label')->for('city') }}
-                            <div class="col-lg-3 col-md-3">
-                                {{ html()->text('city')
-                                    ->class('form-control')
-                                    ->placeholder(__('validation.attributes.backend.ctdb.venues.city'))
-                                    ->attribute('maxlength', 191)
-                                    ->required() }}
+                            <label class="col-md-2 form-control-label" for="city">{{ __('ctdb.backend.venue.fields.labels.city') }}</label>
+                            <div class="col-md-10">
+                                <input class="form-control"
+                                       type="text"
+                                       name="city"
+                                       id="city"
+                                       value="{{ old('city') }}"
+                                       placeholder="{{ __('ctdb.backend.venue.fields.placeholders.city') }}"
+                                       maxlength="191"
+                                       required />
                             </div><!--col-->
                         </div><!--form-group-->
                     </div><!--col-->
@@ -81,66 +90,18 @@
                 <div class="row mt-2 mb-2">
                     <div class="col">
                         <div class="form-group row">
-                            {{ html()->label(__('labels.backend.ctdb.venues.fields.state'))->class('col-md-2 form-control-label')->for('state') }}
+                            <label class="col-md-2 form-control-label" for="state">{{ __('ctdb.backend.venue.fields.labels.state') }}</label>
                             <div class="col-lg-2 col-md-2">
-                                {{ html()->select('state')
-                                    ->class('form-control')
-                                    ->placeholder(__('validation.attributes.backend.ctdb.venues.state'))
-                                    ->options(
-                                        [
-                                            'AL'=>'Alabama',
-                                            'AK'=>'Alaska',
-                                            'AZ'=>'Arizona',
-                                            'AR'=>'Arkansas',
-                                            'CA'=>'California',
-                                            'CO'=>'Colorado',
-                                            'CT'=>'Connecticut',
-                                            'DE'=>'Delaware',
-                                            'DC'=>'District of Columbia',
-                                            'FL'=>'Florida',
-                                            'GA'=>'Georgia',
-                                            'HI'=>'Hawaii',
-                                            'ID'=>'Idaho',
-                                            'IL'=>'Illinois',
-                                            'IN'=>'Indiana',
-                                            'IA'=>'Iowa',
-                                            'KS'=>'Kansas',
-                                            'KY'=>'Kentucky',
-                                            'LA'=>'Louisiana',
-                                            'ME'=>'Maine',
-                                            'MD'=>'Maryland',
-                                            'MA'=>'Massachusetts',
-                                            'MI'=>'Michigan',
-                                            'MN'=>'Minnesota',
-                                            'MS'=>'Mississippi',
-                                            'MO'=>'Missouri',
-                                            'MT'=>'Montana',
-                                            'NE'=>'Nebraska',
-                                            'NV'=>'Nevada',
-                                            'NH'=>'New Hampshire',
-                                            'NJ'=>'New Jersey',
-                                            'NM'=>'New Mexico',
-                                            'NY'=>'New York',
-                                            'NC'=>'North Carolina',
-                                            'ND'=>'North Dakota',
-                                            'OH'=>'Ohio',
-                                            'OK'=>'Oklahoma',
-                                            'OR'=>'Oregon',
-                                            'PA'=>'Pennsylvania',
-                                            'RI'=>'Rhode Island',
-                                            'SC'=>'South Carolina',
-                                            'SD'=>'South Dakota',
-                                            'TN'=>'Tennessee',
-                                            'TX'=>'Texas',
-                                            'UT'=>'Utah',
-                                            'VT'=>'Vermont',
-                                            'VA'=>'Virginia',
-                                            'WA'=>'Washington',
-                                            'WV'=>'West Virginia',
-                                            'WI'=>'Wisconsin',
-                                            'WY'=>'Wyoming',
-                                        ])
-                                    ->required() }}
+                                <select class="form-control" name="state" id="state" required>
+                                    <option value>State</option>
+                                    @foreach($states as $key => $val)
+                                        @if (Input::old('state') == $key)
+                                            <option value="{{ $key }}" selected>{{ $val }}</option>
+                                        @else
+                                            <option value="{{ $key }}">{{ $val }}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
                             </div><!--col-->
                         </div><!--form-group-->
                     </div><!--col-->
