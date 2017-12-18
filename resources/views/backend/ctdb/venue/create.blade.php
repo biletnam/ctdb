@@ -19,7 +19,7 @@
                     </div><!--col-->
                 </div><!--row-->
 
-                <hr />
+                <hr/>
 
                 <div class="row mt-2 mb-2">
                     <div class="col">
@@ -33,7 +33,7 @@
                                        value="{{ old('name') }}"
                                        placeholder="{{ __('ctdb.backend.venue.fields.placeholders.name') }}"
                                        maxlength="191"
-                                       required autofocus />
+                                       required autofocus/>
                             </div><!--col-->
                         </div><!--form-group-->
                     </div><!--col-->
@@ -51,7 +51,7 @@
                                        value="{{ old('address1') }}"
                                        placeholder="{{ __('ctdb.backend.venue.fields.placeholders.address1') }}"
                                        maxlength="191"
-                                       required />
+                                       required/>
                             </div><!--col-->
                         </div><!--form-group-->
                         <div class="form-group row">
@@ -63,7 +63,7 @@
                                        id="address2"
                                        value="{{ old('address2') }}"
                                        placeholder="{{ __('ctdb.backend.venue.fields.placeholders.address2') }}"
-                                       maxlength="191" />
+                                       maxlength="191"/>
                             </div><!--col-->
                         </div><!--form-group-->
                     </div><!--col-->
@@ -81,7 +81,7 @@
                                        value="{{ old('city') }}"
                                        placeholder="{{ __('ctdb.backend.venue.fields.placeholders.city') }}"
                                        maxlength="191"
-                                       required />
+                                       required/>
                             </div><!--col-->
                         </div><!--form-group-->
                     </div><!--col-->
@@ -95,11 +95,7 @@
                                 <select class="form-control" name="state" id="state" required>
                                     <option value>State</option>
                                     @foreach($states as $key => $val)
-                                        @if (Input::old('state') == $key)
-                                            <option value="{{ $key }}" selected>{{ $val }}</option>
-                                        @else
-                                            <option value="{{ $key }}">{{ $val }}</option>
-                                        @endif
+                                        <option value="{{ $key }}" @if (old('state') == $key) selected="selected" @endif>{{ $val }}</option>
                                     @endforeach
                                 </select>
                             </div><!--col-->
@@ -110,13 +106,16 @@
                 <div class="row mt-2 mb-2">
                     <div class="col">
                         <div class="form-group row">
-                            {{ html()->label(__('labels.backend.ctdb.venues.fields.zip'))->class('col-md-2 form-control-label')->for('zip') }}
+                            <label class="col-md-2 form-control-label" for="zip">{{ __('ctdb.backend.venue.fields.labels.zip') }}</label>
                             <div class="col-lg-2 col-md-2">
-                                {{ html()->text('zip')
-                                    ->class('form-control')
-                                    ->placeholder(__('validation.attributes.backend.ctdb.venues.zip'))
-                                    ->attribute('maxlength', 191)
-                                    ->required() }}
+                                <input class="form-control"
+                                       type="text"
+                                       name="zip"
+                                       id="zip"
+                                       value="{{ old('zip') }}"
+                                       placeholder="{{ __('ctdb.backend.venue.fields.placeholders.zip') }}"
+                                       maxlength="191"
+                                       required/>
                             </div><!--col-->
                         </div><!--form-group-->
                     </div><!--col-->
@@ -125,12 +124,15 @@
                 <div class="row mt-2 mb-2">
                     <div class="col">
                         <div class="form-group row">
-                            {{ html()->label(__('labels.backend.ctdb.venues.fields.contact'))->class('col-md-2 form-control-label')->for('contact') }}
+                            <label class="col-md-2 form-control-label" for="contact">{{ __('ctdb.backend.venue.fields.labels.contact') }}</label>
                             <div class="col-md-10">
-                                {{ html()->text('contact')
-                                    ->class('form-control')
-                                    ->placeholder(__('validation.attributes.backend.ctdb.venues.contact'))
-                                    ->attribute('maxlength', 191) }}
+                                <input class="form-control"
+                                       type="text"
+                                       name="contact"
+                                       id="contact"
+                                       value="{{ old('contact') }}"
+                                       placeholder="{{ __('ctdb.backend.venue.fields.placeholders.contact') }}"
+                                       maxlength="191"/>
                             </div><!--col-->
                         </div><!--form-group-->
                     </div><!--col-->
@@ -139,15 +141,15 @@
                 <div class="row mt-2 mb-2">
                     <div class="col">
                         <div class="form-group row">
-                            {{ html()->label(__('labels.backend.ctdb.venues.fields.phone'))->class('col-md-2 form-control-label')->for('phone') }}
+                            <label class="col-md-2 form-control-label" for="phone">{{ __('ctdb.backend.venue.fields.labels.phone') }}</label>
                             <div class="col-md-10">
-                                {{ html()->input('phone')
-                                    ->class('form-control')
-                                    ->placeholder(__('validation.attributes.backend.ctdb.venues.phone'))
-                                    ->attribute('name', 'phone')
-                                    ->attribute('id', 'phone')
-                                    ->attribute('maxlength', 191)
-                                    ->attribute('type', 'tel') }}
+                                <input class="form-control"
+                                       type="tel"
+                                       name="phone"
+                                       id="phone"
+                                       value="{{ old('phone') }}"
+                                       placeholder="{{ __('ctdb.backend.venue.fields.placeholders.phone') }}"
+                                       maxlength="191"/>
                             </div><!--col-->
                         </div><!--form-group-->
                     </div><!--col-->
@@ -156,12 +158,15 @@
                 <div class="row mt-2 mb-2">
                     <div class="col">
                         <div class="form-group row">
-                            {{ html()->label(__('labels.backend.ctdb.venues.fields.email'))->class('col-md-2 form-control-label')->for('email') }}
+                            <label class="col-md-2 form-control-label" for="email">{{ __('ctdb.backend.venue.fields.labels.email') }}</label>
                             <div class="col-md-10">
-                                {{ html()->email('email')
-                                    ->class('form-control')
-                                    ->placeholder(__('validation.attributes.backend.ctdb.venues.email'))
-                                    ->attribute('maxlength', 191) }}
+                                <input class="form-control"
+                                       type="email"
+                                       name="email"
+                                       id="email"
+                                       value="{{ old('email') }}"
+                                       placeholder="{{ __('ctdb.backend.venue.fields.placeholders.email') }}"
+                                       maxlength="191"/>
                             </div><!--col-->
                         </div><!--form-group-->
                     </div><!--col-->
@@ -170,12 +175,14 @@
                 <div class="row mt-2 mb-2">
                     <div class="col">
                         <div class="form-group row">
-                            {{ html()->label(__('labels.backend.ctdb.venues.fields.description'))->class('col-md-2 form-control-label')->for('description') }}
+                            <label class="col-md-2 form-control-label" for="description">{{ __('ctdb.backend.venue.fields.labels.description') }}</label>
                             <div class="col-md-10">
-                                {{ html()->textarea('description')
-                                    ->class('form-control')
-                                    ->placeholder(__('validation.attributes.backend.ctdb.venues.description'))
-                                    ->attribute('maxlength', 191) }}
+                                <textarea class="form-control"
+                                          rows="3"
+                                          cols="50"
+                                          placeholder="{{ __('ctdb.backend.venue.fields.placeholders.description') }}"
+                                          name="description"
+                                          id="description">{{ old('description') }}</textarea>
                             </div><!--col-->
                         </div><!--form-group-->
                     </div><!--col-->
@@ -184,15 +191,15 @@
                 <div class="row mt-2 mb-2">
                     <div class="col">
                         <div class="form-group row">
-                            {{ html()->label(__('labels.backend.ctdb.venues.fields.weblink'))->class('col-md-2 form-control-label')->for('weblink') }}
+                            <label class="col-md-2 form-control-label" for="weblink">{{ __('ctdb.backend.venue.fields.labels.weblink') }}</label>
                             <div class="col-md-10">
-                                {{ html()->input('weblink')
-                                    ->class('form-control')
-                                    ->placeholder(__('validation.attributes.backend.ctdb.venues.weblink'))
-                                    ->attribute('name', 'weblink')
-                                    ->attribute('id', 'weblink')
-                                    ->attribute('maxlength', 191)
-                                    ->attribute('type', 'url') }}
+                                <input class="form-control"
+                                       type="url"
+                                       name="weblink"
+                                       id="weblink"
+                                       value="{{ old('weblink') }}"
+                                       placeholder="{{ __('ctdb.backend.venue.fields.placeholders.weblink') }}"
+                                       maxlength="191"/>
                             </div><!--col-->
                         </div><!--form-group-->
                     </div><!--col-->
@@ -201,15 +208,15 @@
                 <div class="row mt-2 mb-2">
                     <div class="col">
                         <div class="form-group row">
-                            {{ html()->label(__('labels.backend.ctdb.venues.fields.facebooklink'))->class('col-md-2 form-control-label')->for('facebooklink') }}
+                            <label class="col-md-2 form-control-label" for="facebooklink">{{ __('ctdb.backend.venue.fields.labels.facebooklink') }}</label>
                             <div class="col-md-10">
-                                {{ html()->input('facebooklink')
-                                    ->class('form-control')
-                                    ->placeholder(__('validation.attributes.backend.ctdb.venues.facebooklink'))
-                                    ->attribute('name', 'facebooklink')
-                                    ->attribute('id', 'facebooklink')
-                                    ->attribute('maxlength', 191)
-                                    ->attribute('type', 'url') }}
+                                <input class="form-control"
+                                       type="url"
+                                       name="facebooklink"
+                                       id="facebooklink"
+                                       value="{{ old('facebooklink') }}"
+                                       placeholder="{{ __('ctdb.backend.venue.fields.placeholders.facebooklink') }}"
+                                       maxlength="191"/>
                             </div><!--col-->
                         </div><!--form-group-->
                     </div><!--col-->
@@ -218,15 +225,15 @@
                 <div class="row mt-2 mb-2">
                     <div class="col">
                         <div class="form-group row">
-                            {{ html()->label(__('labels.backend.ctdb.venues.fields.twitterlink'))->class('col-md-2 form-control-label')->for('twitterlink') }}
+                            <label class="col-md-2 form-control-label" for="twitterlink">{{ __('ctdb.backend.venue.fields.labels.twitterlink') }}</label>
                             <div class="col-md-10">
-                                {{ html()->input('twitterlink')
-                                    ->class('form-control')
-                                    ->placeholder(__('validation.attributes.backend.ctdb.venues.twitterlink'))
-                                    ->attribute('name', 'twitterlink')
-                                    ->attribute('id', 'twitterlink')
-                                    ->attribute('maxlength', 191)
-                                    ->attribute('type', 'url') }}
+                                <input class="form-control"
+                                       type="url"
+                                       name="twitterlink"
+                                       id="twitterlink"
+                                       value="{{ old('twitterlink') }}"
+                                       placeholder="{{ __('ctdb.backend.venue.fields.placeholders.twitterlink') }}"
+                                       maxlength="191"/>
                             </div><!--col-->
                         </div><!--form-group-->
                     </div><!--col-->
@@ -235,15 +242,15 @@
                 <div class="row mt-2 mb-2">
                     <div class="col">
                         <div class="form-group row">
-                            {{ html()->label(__('labels.backend.ctdb.venues.fields.youtubelink'))->class('col-md-2 form-control-label')->for('youtubelink') }}
+                            <label class="col-md-2 form-control-label" for="youtubelink">{{ __('ctdb.backend.venue.fields.labels.youtubelink') }}</label>
                             <div class="col-md-10">
-                                {{ html()->input('youtubelink')
-                                    ->class('form-control')
-                                    ->placeholder(__('validation.attributes.backend.ctdb.venues.youtubelink'))
-                                    ->attribute('name', 'youtubelink')
-                                    ->attribute('id', 'youtubelink')
-                                    ->attribute('maxlength', 191)
-                                    ->attribute('type', 'url') }}
+                                <input class="form-control"
+                                       type="url"
+                                       name="youtubelink"
+                                       id="youtubelink"
+                                       value="{{ old('youtubelink') }}"
+                                       placeholder="{{ __('ctdb.backend.venue.fields.placeholders.youtubelink') }}"
+                                       maxlength="191"/>
                             </div><!--col-->
                         </div><!--form-group-->
                     </div><!--col-->
@@ -252,15 +259,15 @@
                 <div class="row mt-2 mb-2">
                     <div class="col">
                         <div class="form-group row">
-                            {{ html()->label(__('labels.backend.ctdb.venues.fields.instagramlink'))->class('col-md-2 form-control-label')->for('instagramlink') }}
+                            <label class="col-md-2 form-control-label" for="instagramlink">{{ __('ctdb.backend.venue.fields.labels.instagramlink') }}</label>
                             <div class="col-md-10">
-                                {{ html()->input('instagramlink')
-                                    ->class('form-control')
-                                    ->placeholder(__('validation.attributes.backend.ctdb.venues.instagramlink'))
-                                    ->attribute('name', 'instagramlink')
-                                    ->attribute('id', 'instagramlink')
-                                    ->attribute('maxlength', 191)
-                                    ->attribute('type', 'url') }}
+                                <input class="form-control"
+                                       type="url"
+                                       name="instagramlink"
+                                       id="instagramlink"
+                                       value="{{ old('instagramlink') }}"
+                                       placeholder="{{ __('ctdb.backend.venue.fields.placeholders.instagramlink') }}"
+                                       maxlength="191"/>
                             </div><!--col-->
                         </div><!--form-group-->
                     </div><!--col-->
@@ -278,6 +285,6 @@
                     </div><!--col-->
                 </div><!--row-->
             </div><!--card-footer-->
-        </div><!--card-->
-    {{ html()->form()->close() }}
+        </div>
+    </form>
 @endsection

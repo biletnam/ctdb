@@ -102,8 +102,8 @@ class VenueController extends Controller
      */
     public function edit(Venue $venue, ManageVenueRequest $request)
     {
-        return view('backend.ctdb.venue.edit')
-            ->withVenue($venue);
+        $states = CountryState::getStates('US');
+        return view('backend.ctdb.venue.edit', compact('venue', 'states'));
     }
 
     /**

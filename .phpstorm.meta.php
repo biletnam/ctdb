@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2017-12-15.
+    * Generated on 2017-12-18.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -48,11 +48,11 @@ namespace PHPSTORM_META {
         'Arcanedev\LogViewer\Contracts\Utilities\LogChecker' => \Arcanedev\LogViewer\Utilities\LogChecker::class,
         'Arcanedev\NoCaptcha\Contracts\NoCaptcha' => \Arcanedev\NoCaptcha\NoCaptcha::class,
         'active' => \HieuLe\Active\Active::class,
-        'Spatie\Html\Html' => \Spatie\Html\Html::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'agent' => \Jenssegers\Agent\Agent::class,
         'CountryState' => \DougSisk\CountryState\CountryState::class,
+        'Spatie\Html\Html' => \Spatie\Html\Html::class,
         'gravatar' => \Creativeorange\Gravatar\Gravatar::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
@@ -152,10 +152,10 @@ namespace PHPSTORM_META {
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsManager' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
         'Laravel\Socialite\Contracts\Factory' => \Laravel\Socialite\SocialiteManager::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
     ]));
     override(\Illuminate\Contracts\Container\Container::make(0), map([
         '' => '@',
@@ -197,11 +197,11 @@ namespace PHPSTORM_META {
         'Arcanedev\LogViewer\Contracts\Utilities\LogChecker' => \Arcanedev\LogViewer\Utilities\LogChecker::class,
         'Arcanedev\NoCaptcha\Contracts\NoCaptcha' => \Arcanedev\NoCaptcha\NoCaptcha::class,
         'active' => \HieuLe\Active\Active::class,
-        'Spatie\Html\Html' => \Spatie\Html\Html::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'agent' => \Jenssegers\Agent\Agent::class,
         'CountryState' => \DougSisk\CountryState\CountryState::class,
+        'Spatie\Html\Html' => \Spatie\Html\Html::class,
         'gravatar' => \Creativeorange\Gravatar\Gravatar::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
@@ -301,10 +301,10 @@ namespace PHPSTORM_META {
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsManager' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
         'Laravel\Socialite\Contracts\Factory' => \Laravel\Socialite\SocialiteManager::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
     ]));
     override(\Illuminate\Contracts\Container\Container::makeWith(0), map([
         '' => '@',
@@ -346,11 +346,11 @@ namespace PHPSTORM_META {
         'Arcanedev\LogViewer\Contracts\Utilities\LogChecker' => \Arcanedev\LogViewer\Utilities\LogChecker::class,
         'Arcanedev\NoCaptcha\Contracts\NoCaptcha' => \Arcanedev\NoCaptcha\NoCaptcha::class,
         'active' => \HieuLe\Active\Active::class,
-        'Spatie\Html\Html' => \Spatie\Html\Html::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'agent' => \Jenssegers\Agent\Agent::class,
         'CountryState' => \DougSisk\CountryState\CountryState::class,
+        'Spatie\Html\Html' => \Spatie\Html\Html::class,
         'gravatar' => \Creativeorange\Gravatar\Gravatar::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
@@ -450,10 +450,10 @@ namespace PHPSTORM_META {
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsManager' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
         'Laravel\Socialite\Contracts\Factory' => \Laravel\Socialite\SocialiteManager::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
     ]));
     override(\App::make(0), map([
         '' => '@',
@@ -495,11 +495,11 @@ namespace PHPSTORM_META {
         'Arcanedev\LogViewer\Contracts\Utilities\LogChecker' => \Arcanedev\LogViewer\Utilities\LogChecker::class,
         'Arcanedev\NoCaptcha\Contracts\NoCaptcha' => \Arcanedev\NoCaptcha\NoCaptcha::class,
         'active' => \HieuLe\Active\Active::class,
-        'Spatie\Html\Html' => \Spatie\Html\Html::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'agent' => \Jenssegers\Agent\Agent::class,
         'CountryState' => \DougSisk\CountryState\CountryState::class,
+        'Spatie\Html\Html' => \Spatie\Html\Html::class,
         'gravatar' => \Creativeorange\Gravatar\Gravatar::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
@@ -599,10 +599,10 @@ namespace PHPSTORM_META {
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsManager' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
         'Laravel\Socialite\Contracts\Factory' => \Laravel\Socialite\SocialiteManager::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
     ]));
     override(\App::makeWith(0), map([
         '' => '@',
@@ -644,11 +644,11 @@ namespace PHPSTORM_META {
         'Arcanedev\LogViewer\Contracts\Utilities\LogChecker' => \Arcanedev\LogViewer\Utilities\LogChecker::class,
         'Arcanedev\NoCaptcha\Contracts\NoCaptcha' => \Arcanedev\NoCaptcha\NoCaptcha::class,
         'active' => \HieuLe\Active\Active::class,
-        'Spatie\Html\Html' => \Spatie\Html\Html::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'agent' => \Jenssegers\Agent\Agent::class,
         'CountryState' => \DougSisk\CountryState\CountryState::class,
+        'Spatie\Html\Html' => \Spatie\Html\Html::class,
         'gravatar' => \Creativeorange\Gravatar\Gravatar::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
@@ -748,10 +748,10 @@ namespace PHPSTORM_META {
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsManager' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
         'Laravel\Socialite\Contracts\Factory' => \Laravel\Socialite\SocialiteManager::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
     ]));
     override(\app(0), map([
         '' => '@',
@@ -793,11 +793,11 @@ namespace PHPSTORM_META {
         'Arcanedev\LogViewer\Contracts\Utilities\LogChecker' => \Arcanedev\LogViewer\Utilities\LogChecker::class,
         'Arcanedev\NoCaptcha\Contracts\NoCaptcha' => \Arcanedev\NoCaptcha\NoCaptcha::class,
         'active' => \HieuLe\Active\Active::class,
-        'Spatie\Html\Html' => \Spatie\Html\Html::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'agent' => \Jenssegers\Agent\Agent::class,
         'CountryState' => \DougSisk\CountryState\CountryState::class,
+        'Spatie\Html\Html' => \Spatie\Html\Html::class,
         'gravatar' => \Creativeorange\Gravatar\Gravatar::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
@@ -897,10 +897,10 @@ namespace PHPSTORM_META {
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsManager' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
         'Laravel\Socialite\Contracts\Factory' => \Laravel\Socialite\SocialiteManager::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
     ]));
     override(\resolve(0), map([
         '' => '@',
@@ -942,11 +942,11 @@ namespace PHPSTORM_META {
         'Arcanedev\LogViewer\Contracts\Utilities\LogChecker' => \Arcanedev\LogViewer\Utilities\LogChecker::class,
         'Arcanedev\NoCaptcha\Contracts\NoCaptcha' => \Arcanedev\NoCaptcha\NoCaptcha::class,
         'active' => \HieuLe\Active\Active::class,
-        'Spatie\Html\Html' => \Spatie\Html\Html::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'command.debugbar.clear' => \Barryvdh\Debugbar\Console\ClearCommand::class,
         'agent' => \Jenssegers\Agent\Agent::class,
         'CountryState' => \DougSisk\CountryState\CountryState::class,
+        'Spatie\Html\Html' => \Spatie\Html\Html::class,
         'gravatar' => \Creativeorange\Gravatar\Gravatar::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
@@ -1046,10 +1046,10 @@ namespace PHPSTORM_META {
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsManager' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
         'Laravel\Socialite\Contracts\Factory' => \Laravel\Socialite\SocialiteManager::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
     ]));
 
     override(\Illuminate\Support\Arr::add(0), type(0));
