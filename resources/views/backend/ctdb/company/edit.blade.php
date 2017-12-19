@@ -1,328 +1,333 @@
 @extends ('backend.layouts.app')
 
-@section ('title', __('labels.backend.ctdb.companies.management') . ' | ' . __('labels.backend.ctdb.companies.edit'))
+@section ('title', __('ctdb.backend.company.headings.management') . ' | ' . __('ctdb.backend.company.headings.create'))
 
 @section('content')
-    {{ html()->modelForm($company, 'PATCH', route('admin.ctdb.company.update', $company))->class('form-horizontal')->open() }}
-    {{ html()->hidden("user_id",$logged_in_user->id)}}
-    <div class="card">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-sm-5">
-                    <h4 class="card-title mb-0">
-                        {{ __('labels.backend.ctdb.companies.management') }}
-                        <small class="text-muted">{{ __('labels.backend.ctdb.companies.edit') }}</small>
-                    </h4>
-                </div><!--col-->
-            </div><!--row-->
-            <!--row-->
-
-            <hr />
+    <form class="form-horizontal" method="POST" action="{{ route('admin.ctdb.company.update', $company) }}">
+        {{ method_field('PATCH') }}
+        {{ csrf_field() }}
+        <input type="hidden" name="user_id" id="user_id" value="{{ $logged_in_user->id }}">
 
 
-            <div class="row mt-2 mb-2">
-                <div class="col">
-                    <div class="form-group row">
-                        {{ html()->label(__('labels.backend.ctdb.companies.fields.name'))->class('col-md-2 form-control-label')->for('name') }}
-                        <div class="col-md-10">
-                            {{ html()->text('name')
-                                ->class('form-control')
-                                ->placeholder(__('validation.attributes.backend.ctdb.companies.name'))
-                                ->attribute('maxlength', 191)
-                                ->required()
-                                ->autofocus() }}
-                        </div><!--col-->
-                    </div><!--form-group-->
-                </div><!--col-->
-            </div><!--row-->
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h4 class="card-title mb-0">
+                            {{ __('ctdb.backend.company.headings.management') }}
+                            <small class="text-muted">{{ __('ctdb.backend.company.headings.edit') }}</small>
+                        </h4>
+                    </div><!--col-->
+                </div><!--row-->
+                <!--row-->
 
-            <div class="row mt-2 mb-2">
-                <div class="col">
-                    <div class="form-group row">
-                        {{ html()->label(__('labels.backend.ctdb.companies.fields.address1'))->class('col-md-2 form-control-label')->for('address1') }}
-                        <div class="col-md-10">
-                            {{ html()->text('address1')
-                                ->class('form-control')
-                                ->placeholder(__('validation.attributes.backend.ctdb.companies.address1'))
-                                ->attribute('maxlength', 191)
-                                ->required() }}
-                        </div><!--col-->
-                    </div><!--form-group-->
-                    <div class="form-group row">
-                        {{ html()->label(__('labels.backend.ctdb.companies.fields.address2'))->class('col-md-2 form-control-label')->for('address2') }}
-                        <div class="col-md-10">
-                            {{ html()->text('address2')
-                                ->class('form-control')
-                                ->placeholder(__('validation.attributes.backend.ctdb.companies.address2'))
-                                ->attribute('maxlength', 191) }}
-                        </div><!--col-->
-                    </div><!--form-group-->
-                </div><!--col-->
-            </div><!--row-->
+                <hr/>
 
-            <div class="row mt-2 mb-2">
-                <div class="col">
-                    <div class="form-group row">
-                        {{ html()->label(__('labels.backend.ctdb.companies.fields.city'))->class('col-md-2 form-control-label')->for('city') }}
-                        <div class="col-lg-3 col-md-3">
-                            {{ html()->text('city')
-                                ->class('form-control')
-                                ->placeholder(__('validation.attributes.backend.ctdb.companies.city'))
-                                ->attribute('maxlength', 191)
-                                ->required() }}
-                        </div><!--col-->
-                    </div><!--form-group-->
-                </div><!--col-->
-            </div><!--row-->
+                <div class="card">
+                    <div class="card-header">
+                        Required Data
+                    </div>
+                    <div class="card-body">
+                        <div class="row mt-2 mb-2">
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-md-2 form-control-label" for="type">{{ __('ctdb.backend.company.fields.labels.type') }}</label>
+                                    <div class="col-md-10">
+                                        <select id="type" name="type" autofocus="" required>
+                                            <option value="0">-- Select a type --</option>
+                                            @foreach ($types as $type)
+                                                <option value="{{$type->id}}" @if (old('type',$type->id) == $type->id) selected="selected" @endif>{{ $type->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div><!--col-->
+                                </div><!--form-group-->
+                            </div><!--col-->
+                        </div><!--row-->
 
-            <div class="row mt-2 mb-2">
-                <div class="col">
-                    <div class="form-group row">
-                        {{ html()->label(__('labels.backend.ctdb.companies.fields.state'))->class('col-md-2 form-control-label')->for('state') }}
-                        <div class="col-lg-2 col-md-2">
-                            {{ html()->select('state')
-                                ->class('form-control')
-                                ->placeholder(__('validation.attributes.backend.ctdb.companies.state'))
-                                ->options(
-                                    [
-                                        'AL'=>'Alabama',
-                                        'AK'=>'Alaska',
-                                        'AZ'=>'Arizona',
-                                        'AR'=>'Arkansas',
-                                        'CA'=>'California',
-                                        'CO'=>'Colorado',
-                                        'CT'=>'Connecticut',
-                                        'DE'=>'Delaware',
-                                        'DC'=>'District of Columbia',
-                                        'FL'=>'Florida',
-                                        'GA'=>'Georgia',
-                                        'HI'=>'Hawaii',
-                                        'ID'=>'Idaho',
-                                        'IL'=>'Illinois',
-                                        'IN'=>'Indiana',
-                                        'IA'=>'Iowa',
-                                        'KS'=>'Kansas',
-                                        'KY'=>'Kentucky',
-                                        'LA'=>'Louisiana',
-                                        'ME'=>'Maine',
-                                        'MD'=>'Maryland',
-                                        'MA'=>'Massachusetts',
-                                        'MI'=>'Michigan',
-                                        'MN'=>'Minnesota',
-                                        'MS'=>'Mississippi',
-                                        'MO'=>'Missouri',
-                                        'MT'=>'Montana',
-                                        'NE'=>'Nebraska',
-                                        'NV'=>'Nevada',
-                                        'NH'=>'New Hampshire',
-                                        'NJ'=>'New Jersey',
-                                        'NM'=>'New Mexico',
-                                        'NY'=>'New York',
-                                        'NC'=>'North Carolina',
-                                        'ND'=>'North Dakota',
-                                        'OH'=>'Ohio',
-                                        'OK'=>'Oklahoma',
-                                        'OR'=>'Oregon',
-                                        'PA'=>'Pennsylvania',
-                                        'RI'=>'Rhode Island',
-                                        'SC'=>'South Carolina',
-                                        'SD'=>'South Dakota',
-                                        'TN'=>'Tennessee',
-                                        'TX'=>'Texas',
-                                        'UT'=>'Utah',
-                                        'VT'=>'Vermont',
-                                        'VA'=>'Virginia',
-                                        'WA'=>'Washington',
-                                        'WV'=>'West Virginia',
-                                        'WI'=>'Wisconsin',
-                                        'WY'=>'Wyoming',
-                                    ])
-                                ->required() }}
-                        </div><!--col-->
-                    </div><!--form-group-->
-                </div><!--col-->
-            </div><!--row-->
+                        <div class="row mt-2 mb-2">
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-md-2 form-control-label" for="name">{{ __('ctdb.backend.company.fields.labels.name') }}</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control"
+                                               type="text"
+                                               name="name"
+                                               id="name"
+                                               value="{{ old('name', $company->name) }}"
+                                               placeholder="{{ __('ctdb.backend.company.fields.placeholders.name') }}"
+                                               maxlength="191"
+                                               required />
+                                    </div><!--col-->
+                                </div><!--form-group-->
+                            </div><!--col-->
+                        </div><!--row-->
 
-            <div class="row mt-2 mb-2">
-                <div class="col">
-                    <div class="form-group row">
-                        {{ html()->label(__('labels.backend.ctdb.companies.fields.zip'))->class('col-md-2 form-control-label')->for('zip') }}
-                        <div class="col-lg-2 col-md-2">
-                            {{ html()->text('zip')
-                                ->class('form-control')
-                                ->placeholder(__('validation.attributes.backend.ctdb.companies.zip'))
-                                ->attribute('maxlength', 191)
-                                ->required() }}
-                        </div><!--col-->
-                    </div><!--form-group-->
-                </div><!--col-->
-            </div><!--row-->
+                        <div class="row mt-2 mb-2">
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-md-2 form-control-label" for="address1">{{ __('ctdb.backend.company.fields.labels.address1') }}</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control"
+                                               type="text"
+                                               name="address1"
+                                               id="address1"
+                                               value="{{ old('address1', $company->address1) }}"
+                                               placeholder="{{ __('ctdb.backend.company.fields.placeholders.address1') }}"
+                                               maxlength="191"
+                                               required/>
+                                    </div><!--col-->
+                                </div><!--form-group-->
+                                <div class="form-group row">
+                                    <label class="col-md-2 form-control-label" for="address2">{{ __('ctdb.backend.company.fields.labels.address2') }}</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control"
+                                               type="text"
+                                               name="address2"
+                                               id="address2"
+                                               value="{{ old('address2',$company->address2) }}"
+                                               placeholder="{{ __('ctdb.backend.company.fields.placeholders.address2') }}"
+                                               maxlength="191"/>
+                                    </div><!--col-->
+                                </div><!--form-group-->
+                            </div><!--col-->
+                        </div><!--row-->
 
-            <div class="row mt-2 mb-2">
-                <div class="col">
-                    <div class="form-group row">
-                        {{ html()->label(__('labels.backend.ctdb.companies.fields.contact'))->class('col-md-2 form-control-label')->for('contact') }}
-                        <div class="col-md-10">
-                            {{ html()->text('contact')
-                                ->class('form-control')
-                                ->placeholder(__('validation.attributes.backend.ctdb.companies.contact'))
-                                ->attribute('maxlength', 191) }}
-                        </div><!--col-->
-                    </div><!--form-group-->
-                </div><!--col-->
-            </div><!--row-->
+                        <div class="row mt-2 mb-2">
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-md-2 form-control-label" for="city">{{ __('ctdb.backend.company.fields.labels.city') }}</label>
+                                    <div class="col-lg-3 col-md-3">
+                                        <input class="form-control"
+                                               type="text"
+                                               name="city"
+                                               id="city"
+                                               value="{{ old('city', $company->city) }}"
+                                               placeholder="{{ __('ctdb.backend.company.fields.placeholders.city') }}"
+                                               maxlength="191"
+                                               required/>
+                                    </div><!--col-->
+                                </div><!--form-group-->
+                            </div><!--col-->
+                        </div><!--row-->
 
-            <div class="row mt-2 mb-2">
-                <div class="col">
-                    <div class="form-group row">
-                        {{ html()->label(__('labels.backend.ctdb.companies.fields.phone'))->class('col-md-2 form-control-label')->for('phone') }}
-                        <div class="col-md-10">
-                            {{ html()->input('phone')
-                                ->class('form-control')
-                                ->placeholder(__('validation.attributes.backend.ctdb.companies.phone'))
-                                ->attribute('name', 'phone')
-                                ->attribute('id', 'phone')
-                                ->attribute('value', $company->phone)
-                                ->attribute('maxlength', 191)
-                                ->attribute('type', 'tel') }}
-                        </div><!--col-->
-                    </div><!--form-group-->
-                </div><!--col-->
-            </div><!--row-->
+                        <div class="row mt-2 mb-2">
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-md-2 form-control-label" for="state">{{ __('ctdb.backend.company.fields.labels.state') }}</label>
+                                    <div class="col-lg-2 col-md-2">
+                                        <select class="form-control" name="state" id="state" required>
+                                            <option value>State</option>
+                                            @foreach($states as $key => $val)
+                                                <option value="{{ $key }}"
+                                                        @if (old('state',$company->state) == $key) selected="selected" @endif>{{ $val }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div><!--col-->
+                                </div><!--form-group-->
+                            </div><!--col-->
+                        </div><!--row-->
 
-            <div class="row mt-2 mb-2">
-                <div class="col">
-                    <div class="form-group row">
-                        {{ html()->label(__('labels.backend.ctdb.companies.fields.email'))->class('col-md-2 form-control-label')->for('email') }}
-                        <div class="col-md-10">
-                            {{ html()->email('email')
-                                ->class('form-control')
-                                ->placeholder(__('validation.attributes.backend.ctdb.companies.email'))
-                                ->attribute('maxlength', 191) }}
-                        </div><!--col-->
-                    </div><!--form-group-->
-                </div><!--col-->
-            </div><!--row-->
+                        <div class="row mt-2 mb-2">
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-md-2 form-control-label" for="zip">{{ __('ctdb.backend.company.fields.labels.zip') }}</label>
+                                    <div class="col-lg-2 col-md-2">
+                                        <input class="form-control"
+                                               type="text"
+                                               name="zip"
+                                               id="zip"
+                                               value="{{ old('zip', $company->zip) }}"
+                                               placeholder="{{ __('ctdb.backend.company.fields.placeholders.zip') }}"
+                                               maxlength="191"
+                                               required/>
+                                    </div><!--col-->
+                                </div><!--form-group-->
+                            </div><!--col-->
+                        </div><!--row-->
 
-            <div class="row mt-2 mb-2">
-                <div class="col">
-                    <div class="form-group row">
-                        {{ html()->label(__('labels.backend.ctdb.companies.fields.description'))->class('col-md-2 form-control-label')->for('description') }}
-                        <div class="col-md-10">
-                            {{ html()->textarea('description')
-                                ->class('form-control')
-                                ->placeholder(__('validation.attributes.backend.ctdb.companies.description'))
-                                ->attribute('maxlength', 191) }}
-                        </div><!--col-->
-                    </div><!--form-group-->
-                </div><!--col-->
-            </div><!--row-->
+                    </div>
+                </div>
 
-            <!-- In order to use the HTML5 type=url attribute, must use the generic html()->input() which requires
-                explicitly specifying all relevant attributes. Unlike html()->text() which auto generates the needed ones. -->
+                <div class="card">
+                    <div class="card-header">
+                        Optional Data
+                    </div>
+                    <div class="card-body">
 
-            <div class="row mt-2 mb-2">
-                <div class="col">
-                    <div class="form-group row">
-                        {{ html()->label(__('labels.backend.ctdb.companies.fields.weblink'))->class('col-md-2 form-control-label')->for('weblink') }}
-                        <div class="col-md-10">
-                            {{ html()->input('weblink')
-                                ->class('form-control')
-                                ->placeholder(__('validation.attributes.backend.ctdb.companies.weblink'))
-                                ->attribute('name', 'weblink')
-                                ->attribute('id', 'weblink')
-                                ->attribute('value', $company->weblink)
-                                ->attribute('maxlength', 191)
-                                ->attribute('type', 'url') }}
-                        </div><!--col-->
-                    </div><!--form-group-->
-                </div><!--col-->
-            </div><!--row-->
+                        <div class="row mt-2 mb-2">
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-md-2 form-control-label" for="contact">{{ __('ctdb.backend.company.fields.labels.contact') }}</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control"
+                                               type="text"
+                                               name="contact"
+                                               id="contact"
+                                               value="{{ old('contact',$company->contact) }}"
+                                               placeholder="{{ __('ctdb.backend.company.fields.placeholders.contact') }}"
+                                               maxlength="191"/>
+                                    </div><!--col-->
+                                </div><!--form-group-->
+                            </div><!--col-->
+                        </div><!--row-->
 
-            <div class="row mt-2 mb-2">
-                <div class="col">
-                    <div class="form-group row">
-                        {{ html()->label(__('labels.backend.ctdb.companies.fields.facebooklink'))->class('col-md-2 form-control-label')->for('facebooklink') }}
-                        <div class="col-md-10">
-                            {{ html()->input('facebooklink')
-                                ->class('form-control')
-                                ->placeholder(__('validation.attributes.backend.ctdb.companies.facebooklink'))
-                                ->attribute('name', 'facebooklink')
-                                ->attribute('id', 'facebooklink')
-                                ->attribute('value', $company->facebooklink)
-                                ->attribute('maxlength', 191)
-                                ->attribute('type', 'url') }}
-                        </div><!--col-->
-                    </div><!--form-group-->
-                </div><!--col-->
-            </div><!--row-->
+                        <div class="row mt-2 mb-2">
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-md-2 form-control-label" for="phone">{{ __('ctdb.backend.company.fields.labels.phone') }}</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control"
+                                               type="tel"
+                                               name="phone"
+                                               id="phone"
+                                               value="{{ old('phone',$company->phone) }}"
+                                               placeholder="{{ __('ctdb.backend.company.fields.placeholders.phone') }}"
+                                               maxlength="191"/>
+                                    </div><!--col-->
+                                </div><!--form-group-->
+                            </div><!--col-->
+                        </div><!--row-->
 
-            <div class="row mt-2 mb-2">
-                <div class="col">
-                    <div class="form-group row">
-                        {{ html()->label(__('labels.backend.ctdb.companies.fields.twitterlink'))->class('col-md-2 form-control-label')->for('twitterlink') }}
-                        <div class="col-md-10">
-                            {{ html()->input('twitterlink')
-                                ->class('form-control')
-                                ->placeholder(__('validation.attributes.backend.ctdb.companies.twitterlink'))
-                                ->attribute('name', 'twitterlink')
-                                ->attribute('id', 'twitterlink')
-                                ->attribute('value', $company->twitterlink)
-                                ->attribute('maxlength', 191)
-                                ->attribute('type', 'url') }}
-                        </div><!--col-->
-                    </div><!--form-group-->
-                </div><!--col-->
-            </div><!--row-->
+                        <div class="row mt-2 mb-2">
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-md-2 form-control-label" for="email">{{ __('ctdb.backend.company.fields.labels.email') }}</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control"
+                                               type="email"
+                                               name="email"
+                                               id="email"
+                                               value="{{ old('email',$company->email) }}"
+                                               placeholder="{{ __('ctdb.backend.company.fields.placeholders.email') }}"
+                                               maxlength="191"/>
+                                    </div><!--col-->
+                                </div><!--form-group-->
+                            </div><!--col-->
+                        </div><!--row-->
 
-            <div class="row mt-2 mb-2">
-                <div class="col">
-                    <div class="form-group row">
-                        {{ html()->label(__('labels.backend.ctdb.companies.fields.youtubelink'))->class('col-md-2 form-control-label')->for('youtubelink') }}
-                        <div class="col-md-10">
-                            {{ html()->input('youtubelink')
-                                ->class('form-control')
-                                ->placeholder(__('validation.attributes.backend.ctdb.companies.youtubelink'))
-                                ->attribute('name', 'youtubelink')
-                                ->attribute('id', 'youtubelink')
-                                ->attribute('value', $company->youtubelink)
-                                ->attribute('maxlength', 191)
-                                ->attribute('type', 'url') }}
-                        </div><!--col-->
-                    </div><!--form-group-->
-                </div><!--col-->
-            </div><!--row-->
+                        <div class="row mt-2 mb-2">
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-md-2 form-control-label"
+                                           for="description">{{ __('ctdb.backend.company.fields.labels.description') }}</label>
+                                    <div class="col-md-10">
+                                <textarea class="form-control"
+                                          rows="3"
+                                          cols="50"
+                                          placeholder="{{ __('ctdb.backend.company.fields.placeholders.description') }}"
+                                          name="description"
+                                          id="description">{{ old('description',$company->description) }}</textarea>
+                                    </div><!--col-->
+                                </div><!--form-group-->
+                            </div><!--col-->
+                        </div><!--row-->
 
-            <div class="row mt-2 mb-2">
-                <div class="col">
-                    <div class="form-group row">
-                        {{ html()->label(__('labels.backend.ctdb.companies.fields.instagramlink'))->class('col-md-2 form-control-label')->for('instagramlink') }}
-                        <div class="col-md-10">
-                            {{ html()->input('instagramlink')
-                                ->class('form-control')
-                                ->placeholder(__('validation.attributes.backend.ctdb.companies.instagramlink'))
-                                ->attribute('name', 'instagramlink')
-                                ->attribute('id', 'instagramlink')
-                                ->attribute('value', $company->instagramlink)
-                                ->attribute('maxlength', 191)
-                                ->attribute('type', 'url') }}
-                        </div><!--col-->
-                    </div><!--form-group-->
-                </div><!--col-->
-            </div><!--row-->
-        </div><!--card-body-->
+                        <!-- In order to use the HTML5 type=url attribute, must use the generic html()->input() which requires
+                            explicitly specifying all relevant attributes. Unlike html()->text() which auto generates the needed ones. -->
 
-        <div class="card-footer">
-            <div class="row">
-                <div class="col">
-                    {{ form_cancel(route('admin.ctdb.company.index'), __('buttons.general.cancel')) }}
-                </div><!--col-->
+                        <div class="row mt-2 mb-2">
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-md-2 form-control-label" for="weblink">{{ __('ctdb.backend.company.fields.labels.weblink') }}</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control"
+                                               type="url"
+                                               name="weblink"
+                                               id="weblink"
+                                               value="{{ old('weblink',$company->weblink) }}"
+                                               placeholder="{{ __('ctdb.backend.company.fields.placeholders.weblink') }}"
+                                               maxlength="191"/>
+                                    </div><!--col-->
+                                </div><!--form-group-->
+                            </div><!--col-->
+                        </div><!--row-->
 
-                <div class="col text-right">
-                    {{ form_submit(__('buttons.general.crud.update')) }}
-                </div><!--col-->
-            </div><!--row-->
-        </div><!--card-footer-->
-    </div><!--card-->
-{{ html()->closeModelForm() }}
+                        <div class="row mt-2 mb-2">
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-md-2 form-control-label"
+                                           for="facebooklink">{{ __('ctdb.backend.company.fields.labels.facebooklink') }}</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control"
+                                               type="url"
+                                               name="facebooklink"
+                                               id="facebooklink"
+                                               value="{{ old('facebooklink',$company->facebooklink) }}"
+                                               placeholder="{{ __('ctdb.backend.company.fields.placeholders.facebooklink') }}"
+                                               maxlength="191"/>
+                                    </div><!--col-->
+                                </div><!--form-group-->
+                            </div><!--col-->
+                        </div><!--row-->
+
+                        <div class="row mt-2 mb-2">
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-md-2 form-control-label"
+                                           for="twitterlink">{{ __('ctdb.backend.company.fields.labels.twitterlink') }}</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control"
+                                               type="url"
+                                               name="twitterlink"
+                                               id="twitterlink"
+                                               value="{{ old('twitterlink',$company->twitterlink) }}"
+                                               placeholder="{{ __('ctdb.backend.company.fields.placeholders.twitterlink') }}"
+                                               maxlength="191"/>
+                                    </div><!--col-->
+                                </div><!--form-group-->
+                            </div><!--col-->
+                        </div><!--row-->
+
+                        <div class="row mt-2 mb-2">
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-md-2 form-control-label"
+                                           for="youtubelink">{{ __('ctdb.backend.company.fields.labels.youtubelink') }}</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control"
+                                               type="url"
+                                               name="youtubelink"
+                                               id="youtubelink"
+                                               value="{{ old('youtubelink',$company->youtubelink) }}"
+                                               placeholder="{{ __('ctdb.backend.company.fields.placeholders.youtubelink') }}"
+                                               maxlength="191"/>
+                                    </div><!--col-->
+                                </div><!--form-group-->
+                            </div><!--col-->
+                        </div><!--row-->
+
+                        <div class="row mt-2 mb-2">
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-md-2 form-control-label"
+                                           for="instagramlink">{{ __('ctdb.backend.company.fields.labels.instagramlink') }}</label>
+                                    <div class="col-md-10">
+                                        <input class="form-control"
+                                               type="url"
+                                               name="instagramlink"
+                                               id="instagramlink"
+                                               value="{{ old('instagramlink',$company->instagramlink) }}"
+                                               placeholder="{{ __('ctdb.backend.company.fields.placeholders.instagramlink') }}"
+                                               maxlength="191"/>
+                                    </div><!--col-->
+                                </div><!--form-group-->
+                            </div><!--col-->
+                        </div><!--row-->
+                    </div>
+                </div>
+            </div><!--card-body-->
+
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col">
+                        {{ form_cancel(route('admin.ctdb.company.index'), __('buttons.general.cancel')) }}
+                    </div><!--col-->
+
+                    <div class="col text-right">
+                        {{ form_submit(__('buttons.general.crud.update')) }}
+                    </div><!--col-->
+                </div><!--row-->
+            </div><!--card-footer-->
+        </div><!--card-->
+    {{ html()->closeModelForm() }}
 @endsection

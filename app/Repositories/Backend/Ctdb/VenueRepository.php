@@ -9,6 +9,7 @@ use App\Exceptions\GeneralException;
 use App\Repositories\BaseRepository;
 use App\Events\Backend\Ctdb\Venue\VenueCreated;
 use App\Events\Backend\Ctdb\Venue\VenueUpdated;
+use Propaganistas\LaravelPhone\PhoneNumber;
 
 /**
  * Class VenueRepository.
@@ -62,7 +63,7 @@ class VenueRepository extends BaseRepository
                 'state'         => $data['state'],
                 'zip'           => $data['zip'],
                 'contact'       => $data['contact'],
-                'phone'         => $data['phone'],
+                'phone'         => $this->standardizePhoneNumber($data['phone']),
                 'email'         => $data['email'],
                 'description'   => $data['description'],
                 'weblink'       => $data['weblink'],
@@ -108,7 +109,7 @@ class VenueRepository extends BaseRepository
                 'state'         => $data['state'],
                 'zip'           => $data['zip'],
                 'contact'       => $data['contact'],
-                'phone'         => $data['phone'],
+                'phone'         => $this->standardizePhoneNumber($data['phone']),
                 'email'         => $data['email'],
                 'description'   => $data['description'],
                 'weblink'       => $data['weblink'],
@@ -138,4 +139,20 @@ class VenueRepository extends BaseRepository
                 ->where('name', $name)
                 ->count() > 0;
     }
+
+    /**
+     * @param $phone
+     *
+     * @return string
+     */
+    protected function standardizePhoneNumber($phone)
+    {
+        if ($phone) {
+            return PhoneNumber::make($phone)->ofCountry('US')->formatE164();
+        } else {
+            return $phone;
+        }
+    }
+
+
 }

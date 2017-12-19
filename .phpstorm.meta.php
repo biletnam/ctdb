@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2017-12-18.
+    * Generated on 2017-12-19.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -53,6 +53,7 @@ namespace PHPSTORM_META {
         'agent' => \Jenssegers\Agent\Agent::class,
         'CountryState' => \DougSisk\CountryState\CountryState::class,
         'Spatie\Html\Html' => \Spatie\Html\Html::class,
+        'libphonenumber' => \libphonenumber\PhoneNumberUtil::class,
         'gravatar' => \Creativeorange\Gravatar\Gravatar::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
@@ -202,6 +203,7 @@ namespace PHPSTORM_META {
         'agent' => \Jenssegers\Agent\Agent::class,
         'CountryState' => \DougSisk\CountryState\CountryState::class,
         'Spatie\Html\Html' => \Spatie\Html\Html::class,
+        'libphonenumber' => \libphonenumber\PhoneNumberUtil::class,
         'gravatar' => \Creativeorange\Gravatar\Gravatar::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
@@ -351,6 +353,7 @@ namespace PHPSTORM_META {
         'agent' => \Jenssegers\Agent\Agent::class,
         'CountryState' => \DougSisk\CountryState\CountryState::class,
         'Spatie\Html\Html' => \Spatie\Html\Html::class,
+        'libphonenumber' => \libphonenumber\PhoneNumberUtil::class,
         'gravatar' => \Creativeorange\Gravatar\Gravatar::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
@@ -500,6 +503,7 @@ namespace PHPSTORM_META {
         'agent' => \Jenssegers\Agent\Agent::class,
         'CountryState' => \DougSisk\CountryState\CountryState::class,
         'Spatie\Html\Html' => \Spatie\Html\Html::class,
+        'libphonenumber' => \libphonenumber\PhoneNumberUtil::class,
         'gravatar' => \Creativeorange\Gravatar\Gravatar::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
@@ -649,6 +653,7 @@ namespace PHPSTORM_META {
         'agent' => \Jenssegers\Agent\Agent::class,
         'CountryState' => \DougSisk\CountryState\CountryState::class,
         'Spatie\Html\Html' => \Spatie\Html\Html::class,
+        'libphonenumber' => \libphonenumber\PhoneNumberUtil::class,
         'gravatar' => \Creativeorange\Gravatar\Gravatar::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
@@ -798,6 +803,7 @@ namespace PHPSTORM_META {
         'agent' => \Jenssegers\Agent\Agent::class,
         'CountryState' => \DougSisk\CountryState\CountryState::class,
         'Spatie\Html\Html' => \Spatie\Html\Html::class,
+        'libphonenumber' => \libphonenumber\PhoneNumberUtil::class,
         'gravatar' => \Creativeorange\Gravatar\Gravatar::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
@@ -947,6 +953,7 @@ namespace PHPSTORM_META {
         'agent' => \Jenssegers\Agent\Agent::class,
         'CountryState' => \DougSisk\CountryState\CountryState::class,
         'Spatie\Html\Html' => \Spatie\Html\Html::class,
+        'libphonenumber' => \libphonenumber\PhoneNumberUtil::class,
         'gravatar' => \Creativeorange\Gravatar\Gravatar::class,
         'blade.compiler' => \Illuminate\View\Compilers\BladeCompiler::class,
         'translation.loader' => \Illuminate\Translation\FileLoader::class,

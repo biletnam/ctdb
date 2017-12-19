@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend\Ctdb\Company;
 
+use CountryState;
 use App\Models\Ctdb\Company;
 use App\Http\Controllers\Controller;
 use App\Events\Backend\Ctdb\Company\CompanyDeleted;
@@ -52,8 +53,9 @@ class CompanyController extends Controller
     {
         $types = Type::orderBy('name')->get();
         $venues = Venue::orderBy('name')->get();
+        $states = CountryState::getStates('US');
 
-        return view('backend.ctdb.company.create',compact('types','venues'));
+        return view('backend.ctdb.company.create',compact('types','venues', 'states'));
     }
 
     /**
@@ -107,8 +109,11 @@ class CompanyController extends Controller
      */
     public function edit(Company $company, ManageCompanyRequest $request)
     {
-        return view('backend.ctdb.company.edit')
-            ->withCompany($company);
+        $types = Type::orderBy('name')->get();
+        $venues = Venue::orderBy('name')->get();
+        $states = CountryState::getStates('US');
+
+        return view('backend.ctdb.company.edit',compact('types','venues', 'states', 'company'));
     }
 
     /**

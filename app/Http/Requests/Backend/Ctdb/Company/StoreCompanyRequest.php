@@ -29,6 +29,11 @@ class StoreCompanyRequest extends FormRequest
     {
         return [
             'name'     => 'required|max:191',
+            'address1' => 'required|max:191',
+            'city'     => 'required|max:191',
+            'state'    => 'required|max:191',
+            'zip'      => 'required|max:191',
+            'phone'    => 'nullable|phone:US',
         ];
     }
 }

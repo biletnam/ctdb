@@ -2,6 +2,8 @@
 
 namespace App\Models\Ctdb\Traits\Attribute;
 
+use Propaganistas\LaravelPhone\PhoneNumber;
+
 /**
  * Trait VenueAttribute.
  */
@@ -38,4 +40,5 @@ trait VenueAttribute
 			  '.$this->delete_button.'
 			</div>';
     }
+
 }

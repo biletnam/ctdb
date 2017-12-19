@@ -1,5 +1,6 @@
-Got Venue form completed and working with plain old html.
-Not fully tested.
+All forms updated to use plain HTML now.
+No thorough testing yet.
+
 
 
 

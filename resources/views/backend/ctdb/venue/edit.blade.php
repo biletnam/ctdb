@@ -152,7 +152,7 @@
                                        type="tel"
                                        name="phone"
                                        id="phone"
-                                       value="{{ old('phone',$venue->phone) }}"
+                                       value="{{ old('phone', phone($venue->phone, 'US')->formatForCountry('US')) }}"
                                        placeholder="{{ __('ctdb.backend.venue.fields.placeholders.phone') }}"
                                        maxlength="191"/>
                             </div><!--col-->
