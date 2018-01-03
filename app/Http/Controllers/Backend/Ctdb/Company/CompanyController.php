@@ -140,8 +140,8 @@ class CompanyController extends Controller
             'twitterlink',
             'youtubelink',
             'instagramlink',
-            'type_id',
-            'venue_id',
+            'type',
+            'primaryvenue',
             'user_id'
         ));
 

@@ -222,6 +222,24 @@
                             </div><!--col-->
                         </div><!--row-->
 
+                        <div class="row mt-2 mb-2">
+                            <div class="col">
+                                <div class="form-group row">
+                                    <label class="col-md-2 form-control-label" for="primaryvenue">{{ __('ctdb.backend.company.fields.labels.primaryvenue') }}</label>
+                                    <div class="col-md-10">
+                                        <select id="type" name="primaryvenue">
+                                            <option value>--- Select a venue ---</option>
+                                            @foreach($venues as $key => $venue)
+                                                <option value="{{ $key }}"
+                                                        @if (old('primaryvenue',$company->primaryvenue) == $key) selected="selected" @endif>{{ $venue->name }}</option>
+                                            @endforeach
+                                        </select>
+
+                                    </div><!--col-->
+                                </div><!--form-group-->
+                            </div><!--col-->
+                        </div><!--row-->
+
                         <!-- In order to use the HTML5 type=url attribute, must use the generic html()->input() which requires
                             explicitly specifying all relevant attributes. Unlike html()->text() which auto generates the needed ones. -->
 

@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <form class="form-horizontal" method="POST" action="{{ route('admin.ctdb.type.update', $genre) }}">
+    <form class="form-horizontal" method="POST" action="{{ route('admin.ctdb.genre.update', $genre) }}">
         <input type="hidden" name="_method" id="_method" value="PATCH">
         {{ csrf_field() }}
         <input type="hidden" name="user_id" id="user_id" value="{{ $logged_in_user->id }}">

@@ -51,8 +51,8 @@
                             <div class="col-md-10">
                                 <input class="form-control"
                                        type="text"
-                                       name="name"
-                                       id="name"
+                                       name="weblink"
+                                       id="weblink"
                                        value="{{ old('weblink',$licensor->weblink) }}"
                                        placeholder="{{ __('ctdb.backend.licensor.fields.placeholders.weblink') }}"
                                        maxlength="191">
